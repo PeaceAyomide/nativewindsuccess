@@ -1,17 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import {  Text, View, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import SignInPage from './screens/SignInPage';
+import Login from './screens/Login';
 import './global.css'; 
+
+const Stack = createStackNavigator();
+
+
 
 export default function App() {
   return (
-    <View className="flex-1 justify-center items-center bg-black gap-4">
-      <Text className=" text-white text-[30px] font-bold"> Goal </Text>
-      <Text className="text-white"> Make my Tailwind Work</Text>
-   <TouchableOpacity className="bg-blue-500 p-5 rounded-[20px]">
-        <Text className="text-white">Press me</Text>
-   </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInPage} />
+        <Stack.Screen name="Login" options={{ headerShown: false }} component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
