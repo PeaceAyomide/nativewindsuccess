@@ -1,3 +1,5 @@
+upgrade: npx expo upgrade
+
 Website: Expo.dev
 Create project:  npx create-expo-app@latest or npx create-expo-app "App Name"
 
